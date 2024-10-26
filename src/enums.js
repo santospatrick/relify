@@ -1,0 +1,1 @@
+export const semverPattern = /^\d+\.\d+\.\d+$/;

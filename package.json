@@ -2,8 +2,22 @@
   "name": "relify",
   "version": "0.0.0",
   "description": "Simple releases based in commit history for Github (works better with \"squash\" merges and clean git commit messages)",
-  "main": "index.js",
+  "main": "src/index.js",
+  "bin": {
+    "relify": "./src/index.js"
+  },
+  "type": "module",
   "repository": "git@github.com:santospatrick/relify.git",
   "author": "Patrick Santos <patrickspteixeira@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^21.0.2",
+    "inquirer": "^12.0.1",
+    "ora": "^8.1.0",
+    "simple-git": "^3.27.0"
+  },
+  "devDependencies": {
+    "@rocketseat/eslint-config": "^2.2.2",
+    "eslint": "^9.13.0"
+  }
 }
