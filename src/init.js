@@ -42,6 +42,7 @@ export async function init() {
     console.log('--------')
     console.log('Release description preview:')
     const description = CommitsPresenter.execute(commitMessages);
+    console.log(description)
     console.log(''); // empty line
 
     const nextSuggestedTagVersion = latestTag ? bumpVersion(latestTag) : DEFAULT_VERSION_IF_NONE_FOUND;
