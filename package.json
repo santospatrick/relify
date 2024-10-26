@@ -1,0 +1,9 @@
+{
+  "name": "relify",
+  "version": "0.0.0",
+  "description": "Simple releases based in commit history for Github (works better with \"squash\" merges and clean git commit messages)",
+  "main": "index.js",
+  "repository": "git@github.com:santospatrick/relify.git",
+  "author": "Patrick Santos <patrickspteixeira@gmail.com>",
+  "license": "MIT"
+}
