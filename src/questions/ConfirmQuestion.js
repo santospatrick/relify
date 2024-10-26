@@ -10,5 +10,5 @@ export const ConfirmQuestion = {
     type: 'confirm',
     name: 'confirmRelease',
     message: 'Are you sure you want to create this release?',
-    default: false,
+    default: true,
 };

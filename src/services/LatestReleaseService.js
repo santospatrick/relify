@@ -1,4 +1,5 @@
 import simpleGit from 'simple-git'
+import { CommitsPresenter } from '../presenters/CommitsPresenter.js';
 
 export class LatestReleaseService {
   constructor() {
@@ -21,15 +22,17 @@ export class LatestReleaseService {
         commits = await this.git.log();
       }
 
+      if (!commits.all.length) {
+        console.log('❌ No commits found since last release');
+        console.log('Add commits to the repository to create a new release');
+        process.exit(0);
+      }
+
       const commitMessages = commits.all.map(commit => commit.message);
       const version = latestTag;
   
       console.log(`Commits since last release: ${commitMessages.length}`);
-
-      console.log('--------')
-      console.log('Release description preview:')
-      console.log(commitMessages.map(item => `- ${item}`).join('\n'));
-  
+      
       return { commitMessages, version };
     } catch (error) {
       console.error('Error getting commits:', error);

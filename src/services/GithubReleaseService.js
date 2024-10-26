@@ -6,7 +6,7 @@ export class GithubReleaseService {
         this.octokit = new Octokit({ auth: authToken })
     }
 
-    async execute({ owner, repo, version, description, branch }) {
+    async execute({ owner, repo, version, description, branch, draft }) {
         const spinner = ora({
             text: 'Creating a release on Github...',
             spinner: 'clock'
@@ -20,6 +20,7 @@ export class GithubReleaseService {
                 name: `Release ${version}`,
                 body: description,
                 target_commitish: branch,
+                draft
             });
 
             spinner.succeed(`Release created successfully: ${release.data.html_url}`);
