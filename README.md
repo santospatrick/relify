@@ -2,6 +2,9 @@
 
 > 📦 A simple interactive CLI to automate and create your next GitHub release effortlessly.
 
+[![npm version](https://img.shields.io/npm/v/relify?style=flat-square)](https://www.npmjs.com/package/relify)
+[![Alpha](https://img.shields.io/badge/status-alpha-red.svg?style=flat-square)](https://www.npmjs.com/package/@santospatrick/notify)
+
 ## Features
 
 - **Simple Release Management**: Initiates releases by fetching commit history and preparing your repository for deployment.
