@@ -1,6 +1,6 @@
 # Relify - Simple Releases
 
-> **Relify** is a lightweight CLI tool for managing and deploying releases with ease. Built for simplicity, Relify helps you automate your release process with a friendly, interactive interface and visual feedback.
+> A simple interactive CLI to automate and create your next GitHub release effortlessly.
 
 ## Features
 
