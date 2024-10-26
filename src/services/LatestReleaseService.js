@@ -25,6 +25,9 @@ export class LatestReleaseService {
       const version = latestTag;
   
       console.log(`Commits since last release: ${commitMessages.length}`);
+
+      console.log('--------')
+      console.log('Release description preview:')
       console.log(commitMessages.map(item => `- ${item}`).join('\n'));
   
       return { commitMessages, version };

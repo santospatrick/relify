@@ -7,6 +7,7 @@ import { CommitsPresenter } from "./presenters/CommitsPresenter.js";
 import { GithubReleaseService } from "./services/GithubReleaseService.js";
 import { BranchQuestion } from "./questions/BranchQuestion.js";
 import { GithubAuthQuestion } from "./questions/GithubAuthQuestion.js";
+import { validateNextVersion } from "./utils/validateNextVersion.js";
 
 export async function init() {
     console.log(`
@@ -39,11 +40,18 @@ export async function init() {
     
     const versionConfirmAnswers = await inquirer.prompt([
         VersionQuestion({ version: latestTag }),
+    ]);
+
+    const { version: nextVersion } = versionConfirmAnswers;
+
+    await validateNextVersion(latestTag, nextVersion);
+
+    const confirmGithubQuestions = await inquirer.prompt([
         ConfirmQuestion,
         GithubAuthQuestion
     ]);
 
-    const { version: nextVersion, confirmRelease, authToken } = versionConfirmAnswers;
+    const { confirmRelease, authToken } = confirmGithubQuestions;
 
     if (!confirmRelease) {
         console.log('Release cancelled');

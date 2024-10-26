@@ -1,6 +1,6 @@
 # Relify - Simple Releases
 
-> A simple interactive CLI to automate and create your next GitHub release effortlessly.
+> 📦 A simple interactive CLI to automate and create your next GitHub release effortlessly.
 
 ## Features
 
