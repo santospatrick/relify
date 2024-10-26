@@ -1,8 +1,12 @@
 {
   "name": "relify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple releases based in commit history for Github (works better with \"squash\" merges and clean git commit messages)",
   "main": "src/index.js",
+  "files": [
+    "src",
+    "docs"
+  ],
   "bin": {
     "relify": "./src/index.js"
   },
